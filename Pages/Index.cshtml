@@ -1,0 +1,49 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>
+<div class="text-center" alignment="justify">
+    <centre><h1><font color="blue">Online Video Game Store</font></h1></centre>
+</div>
+<hr size="80" color="black">
+<p>
+    The video game industry is the economic sector involved in the development, marketing, and monetization of video games. It encompasses dozens of job disciplines and its component parts employ thousands of people worldwide.
+    This is a video game website which stores all the video games we have in our store located and headquartered at CIncinnati. We keep a record of all the game CD's we have, the number of games purchased,the price of the various games, the amount being charged to the customer, the gamers and their information like their most favourite game and number of games purchased.
+    The admin of this website can create, store, edit details of purchases made in the store and also can see what games are being sold most frequently and also keep a check on the cash transactions as to which mode of payent is being used and which gamer payed money for which game.
+
+</p>
+<div class="row">
+    <div class="col-md-6">
+        <p>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_4g-rJy00vATsUT4-myYMoSJ9hY4VR6Rd799dPDQa9DvgNo8z" />
+        </p>
+    </div>
+    <div class="col-md-6">
+        <h3>DASHBOARD</h3>
+        <ul>
+            <li>Total Video Games : @Model.CountOfVideoGames</li>
+            <li>Total Gamers : @Model.CountOfGamers</li>
+            <li>Total Purchases: @Model.CountOfPurchases</li>
+            <li>Number of Different Games: @Model.CountOfDifferentGames</li>
+        </ul>
+    </div>
+</div>
+<h3>Sample URLs to the Manufacturer Profile Page</h3>
+<ul>
+    <li><a href="https://localhost:44385/VideoGameProfile">https://localhost:44385/VideoGameProfile</a></li>
+    <li><a href="https://localhost:44385/PurchaseDetails?purchaseid=1">https://localhost:44385/PurchaseDetails?purchaseid=1</a></li>
+    <li><a href="https://localhost:44385/PurchaseDetails?purchaseid=2">https://localhost:44385/PurchaseDetails?purchaseid=2</a></li>
+    <li><a href="https://localhost:44385/GamersProfile">https://localhost:44385/GamersProfile</a></li>
+</ul>
+<h3>Custom Forms Navigation</h3>
+<ul>
+    <li><a href="https://localhost:44385/searchvideogame">https://localhost:44385/searchvideogame</a></li>
+    <li><a href="https://localhost:44385/updategamer?id=1">https://localhost:44385/updategamer?id=1</a></li>
+    <li><a href="https://localhost:44385/updategamer?id=2">https://localhost:44385/updategamer?id=2</a></li>
+    <li><a href="https://localhost:44385/startpurchase">https://localhost:44385/startpurchase</a></li>
+</ul>

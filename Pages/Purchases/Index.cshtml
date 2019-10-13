@@ -1,0 +1,62 @@
+﻿@page
+@model OnlineVideoGamePortal.Pages.Purchases.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center">Purchases Made</h1>
+
+<p>
+    <a asp-page="Create">Add New Purchase</a>
+</p>
+
+    <div class="col-md-6">
+        <p>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBD3R694TWJGK4WLYr8wYt_pdHvG1ZtGyCyCvLfRefuuyosQds" />
+        </p>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Purchase[0].AmountPaid)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Purchase[0].ModeOfTransaction)
+                </th>
+                <!-- <th>
+         @Html.DisplayNameFor(model => model.Purchase[0].GamerInfo)
+     </th> -->
+                <th>
+                    @Html.DisplayNameFor(model => model.Purchase[0].VideoGame)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Purchase)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AmountPaid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModeOfTransaction)
+                </td>
+                <!-- <td>
+            @Html.DisplayFor(modelItem => item.GamerInfo.Name)
+        </td>
+    -->
+                <td>
+                    @Html.DisplayFor(modelItem => item.VideoGame.Title)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.PurchaseID">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.PurchaseID">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.PurchaseID">Delete</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>

@@ -1,0 +1,70 @@
+﻿@page
+@model OnlineVideoGamePortal.Pages.SearchVideoGameModel
+@{
+    ViewData["Title"] = "SearchVideoGame";
+}
+
+<h1>SearchVideoGame</h1>
+
+<form action="" method="POST" style="margin-top: 50px;">
+    <div class="form-group">
+        <label class="control-label" for="search">Video-Game Name</label>
+        <input type="text" class="form-control" name="search" id="search" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Search Game" class="btn btn-default" />
+    </div>
+</form>
+
+
+@if (Model.SearchCompleted)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Version</th>
+                <th>MemorySpace</th>
+                <th>Available</th>
+                <th>Price</th>
+
+
+
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.SearchResults.Count > 0)
+            {
+                @foreach (var videogame in Model.SearchResults)
+                {
+                    <tr>
+                        <td>@videogame.Title</td>
+                        <td>@videogame.Version</td>
+                        <td>@videogame.MemorySpace</td>
+                        <td>@videogame.IsAvailable</td>
+                        <td>@videogame.Price</td>
+
+
+
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr class="danger">
+                    <td colspan="4" class="text-center">
+                        No results found for term "@Model.Search"
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-info">
+        <p>
+            Enter the search terms into the box and click <strong>Search Game</strong>
+        </p>
+    </div>
+}

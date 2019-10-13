@@ -1,0 +1,27 @@
+﻿@page
+@model OnlineVideoGamePortal.Pages.VideoGameProfileModel
+@{
+    ViewData["Title"] = "VideoGameProfile";
+}
+
+<h1 class="text-center">Video Game Details</h1>
+<hr />
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Video Game Name</th>
+            <th>Release Date</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var mob in Model.VideoGame)
+        {
+            <tr style="color:blue">
+                <td>@mob.Title</td>
+                <td>@mob.ReleaseDate</td>
+                <td>@mob.Price</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,60 @@
+﻿@page
+@model OnlineVideoGamePortal.Pages.Gamers.DetailsModel
+
+@{
+    ViewData["Title"] = "Details Of Gamers";
+}
+
+<h1>Details Of Gamers</h1>
+
+<div>
+      <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GamerInfo.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GamerInfo.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GamerInfo.Age)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GamerInfo.Age)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GamerInfo.PreferredVideoGame)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GamerInfo.PreferredVideoGame)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GamerInfo.GamesPurchased)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GamerInfo.GamesPurchased)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GamerInfo.FavGame)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GamerInfo.FavGame)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GamerInfo.DateJoined)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GamerInfo.DateJoined)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GamerInfo.IsActiveCustomer)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GamerInfo.IsActiveCustomer)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.GamerInfo.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

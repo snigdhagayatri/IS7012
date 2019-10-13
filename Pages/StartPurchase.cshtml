@@ -1,0 +1,57 @@
+﻿@page
+@model OnlineVideoGamePortal.Pages.StartPurchaseModel
+@{
+    ViewData["Title"] = "StartPurchase";
+}
+
+
+
+<h1>StartPurchase</h1>
+
+
+
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <form method="post" style="margin-top: 50px;">
+
+
+
+            <div class="form-group">
+                <label asp-for="StartPurchaseForm.VideoGameID" class="control-label"></label>
+                <select asp-for="StartPurchaseForm.VideoGameID" class="form-control" asp-items="ViewBag.VideoGameID"></select>
+                <span asp-validation-for="StartPurchaseForm.VideoGameID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartPurchaseForm.GamerID" class="control-label"></label>
+                <select asp-for="StartPurchaseForm.GamerID" class="form-control" asp-items="ViewBag.ID"></select>
+                <span asp-validation-for="StartPurchaseForm.GamerID" class="text-danger"></span>
+            </div>
+
+
+
+            <div class="form-group">
+                <label asp-for="StartPurchaseForm.AmountPaid" class="control-label"></label>
+                <input asp-for="StartPurchaseForm.AmountPaid" class="form-control" />
+                <span asp-validation-for="StartPurchaseForm.AmountPaid" class="text-danger"></span>
+            </div>
+
+
+
+            <div class="form-group">
+                <label asp-for="StartPurchaseForm.ModeOfTransaction" class="control-label"></label>
+                <input asp-for="StartPurchaseForm.ModeOfTransaction" class="form-control" />
+                <span asp-validation-for="StartPurchaseForm.ModeOfTransaction" class="text-danger"></span>
+            </div>
+
+
+
+            <div class="form-group">
+                <input type="submit" value="Start Purchase" class="btn btn-danger" />
+            </div>
+
+
+
+        </form>
+    </div>
+</div>

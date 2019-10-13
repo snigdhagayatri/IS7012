@@ -1,0 +1,67 @@
+﻿@page
+@model OnlineVideoGamePortal.Pages.VideoGames.CreateModel
+
+@{
+    ViewData["Title"] = "Create New Video Game";
+}
+
+    <h1> Create New Video Game</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="VideoGame.Title" class="control-label"></label>
+                <input asp-for="VideoGame.Title" class="form-control" />
+                <span asp-validation-for="VideoGame.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VideoGame.Version" class="control-label"></label>
+                <input asp-for="VideoGame.Version" class="form-control" />
+                <span asp-validation-for="VideoGame.Version" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VideoGame.ReleaseDate" class="control-label"></label>
+                <input asp-for="VideoGame.ReleaseDate" class="form-control" />
+                <span asp-validation-for="VideoGame.ReleaseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VideoGame.Price" class="control-label"></label>
+                <input asp-for="VideoGame.Price" class="form-control" />
+                <span asp-validation-for="VideoGame.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VideoGame.MemorySpace" class="control-label"></label>
+                <input asp-for="VideoGame.MemorySpace" class="form-control" />
+                <span asp-validation-for="VideoGame.MemorySpace" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VideoGame.Description" class="control-label"></label>
+                <input asp-for="VideoGame.Description" class="form-control" />
+                <span asp-validation-for="VideoGame.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="VideoGame.IsSportsGame" /> @Html.DisplayNameFor(model => model.VideoGame.IsSportsGame))
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="VideoGame.IsAvailable" /> @Html.DisplayNameFor(model => model.VideoGame.IsAvailable))
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

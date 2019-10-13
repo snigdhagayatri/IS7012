@@ -1,0 +1,50 @@
+﻿@page
+@model OnlineVideoGamePortal.Pages.PurchaseDetailsModel
+@{
+    ViewData["Title"] = "PurchaseDetails";
+}
+
+<h1 class="text-center">Purchase Summary</h1>
+<hr />
+<div class="col-8">
+    
+    <dl>
+        <dt>Order ID</dt>
+        <dd>@Model.Purchases.PurchaseID</dd>
+        <dt>Order Amount</dt>
+        <dd>
+            @Model.Purchases.AmountPaid
+            @if (Model.Purchases.AmountPaid <= 10)
+            {
+                <span class="badge badge-warning">This Purchase was not very profitable</span>
+            }
+            @if (Model.Purchases.AmountPaid > 10)
+            {
+                <span class="badge badge-info">This is profitable</span>
+            }
+            
+        </dd>
+        <dt>Payment Mode</dt>
+        <dd>
+            @Model.Purchases.ModeOfTransaction
+           
+        </dd>
+    </dl>
+</div>
+<div class="col-8">
+    <dl>
+
+        <dt>Gamer</dt>
+        <dd>@Model.Purchases.GamerID</dd>
+
+    </dl>
+</div>
+
+<div class="col-8">
+    
+    <dl>
+        <dt>Video Game</dt>
+        <dd>@Model.Purchases.VideoGameID</dd>
+       
+    </dl>
+</div>

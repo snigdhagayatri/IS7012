@@ -1,0 +1,47 @@
+﻿@page
+@model OnlineVideoGamePortal.Pages.Purchases.EditModel
+
+@{
+    ViewData["Title"] = "Edit Purchase";
+}
+    <h1>Edit Purchase</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Purchase.PurchaseID" />
+            <div class="form-group">
+                <label asp-for="Purchase.AmountPaid" class="control-label"></label>
+                <input asp-for="Purchase.AmountPaid" class="form-control" />
+                <span asp-validation-for="Purchase.AmountPaid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Purchase.ModeOfTransaction" class="control-label"></label>
+                <input asp-for="Purchase.ModeOfTransaction" class="form-control" />
+                <span asp-validation-for="Purchase.ModeOfTransaction" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Purchase.GamerID" class="control-label"></label>
+                <select asp-for="Purchase.GamerID" class="form-control" asp-items="ViewBag.ID"></select>
+                <span asp-validation-for="Purchase.GamerID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Purchase.VideoGameID" class="control-label"></label>
+                <select asp-for="Purchase.VideoGameID" class="form-control" asp-items="ViewBag.VideoGameID"></select>
+                <span asp-validation-for="Purchase.VideoGameID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

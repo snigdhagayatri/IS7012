@@ -1,0 +1,91 @@
+﻿@page
+@model OnlineVideoGamePortal.Pages.UpdateGamerModel
+@{
+    ViewData["Title"] = "UpdateGamer";
+}
+
+
+
+<h1>Update Gamer</h1>
+
+
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <form method="post" style="margin-top: 50px;">
+
+
+
+            <div class="form-group">
+                <label class="control-label">Gamer Name</label>
+                <div>
+                    <p class="form-control-static">@Model.GamerInfo.Name</p>
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <label class="control-label">Date Joined</label>
+                <div>
+                    <p class="form-control-static">@Model.GamerInfo.DateJoined.Value.ToString("MM-dd-yyyy")</p>
+                </div>
+            </div>
+
+
+
+            @if (Model.GamerInfo.IsActiveCustomer)
+            {
+                <input type="hidden" asp-for="UpdateGamerForm.GamerID" />
+
+
+
+                <div class="form-group">
+
+
+
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" asp-for="UpdateGamerForm.IsActiveCustomer" />
+                            @Html.DisplayNameFor(model => model.UpdateGamerForm.IsActiveCustomer)
+                        </label>
+                    </div>
+                    <span asp-validation-for="UpdateGamerForm.IsActiveCustomer" class="text-danger"></span>
+                </div>
+
+
+
+                <div class="form-group">
+                    <label asp-for="UpdateGamerForm.PreferredVideoGame" class="control-label"></label>
+                    <input asp-for="UpdateGamerForm.PreferredVideoGame" class="form-control" />
+                    <span asp-validation-for="UpdateGamerForm.PreferredVideoGame" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="UpdateGamerForm.FavGame" class="control-label"></label>
+                    <input asp-for="UpdateGamerForm.FavGame" class="form-control" />
+                    <span asp-validation-for="UpdateGamerForm.FavGame" class="text-danger"></span>
+                </div>
+
+
+
+                <div class="form-group">
+                    <input type="submit" value="Update Gamer Info" class="btn btn-danger" />
+                </div>
+            }
+            else
+            {
+
+
+
+                <div class="form-group">
+                    <label class="control-label">Gamer Status</label>
+                </div>
+                <div class="alert alert-warning">
+                    <p>The gamer is currently active</p>
+                </div>
+            }
+
+
+        </form>
+    </div>
+</div>
